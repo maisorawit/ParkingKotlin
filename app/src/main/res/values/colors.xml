@@ -3,4 +3,9 @@
     <color name="colorPrimary">#008577</color>
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
+    <color name="bg">#A7B1FF</color>
+    <color name="confirm">#8BFF99</color>
+    <color name="delete">#FF7E95</color>
+    <color name="cancel">#C3C3D5</color>
+
 </resources>

@@ -10,6 +10,7 @@
         android:id="@+id/b1_button"
         android:layout_width="@dimen/width_button"
         android:layout_height="@dimen/height_button"
+        android:background="@color/bg"
         android:text="@string/free1_button"
         app:layout_constraintBaseline_toBaselineOf="@+id/b2_button"
         app:layout_constraintEnd_toStartOf="@+id/b2_button"
@@ -20,6 +21,7 @@
         android:id="@+id/b3_button"
         android:layout_width="@dimen/width_button"
         android:layout_height="@dimen/height_button"
+        android:background="@color/bg"
         android:text="@string/free3_button"
         app:layout_constraintBaseline_toBaselineOf="@+id/b2_button"
         app:layout_constraintEnd_toEndOf="parent"
@@ -31,6 +33,7 @@
         android:layout_width="@dimen/width_button"
         android:layout_height="@dimen/height_button"
         android:layout_marginTop="40dp"
+        android:background="@color/bg"
         android:text="@string/free2_button"
         app:layout_constraintEnd_toStartOf="@+id/b3_button"
         app:layout_constraintHorizontal_bias="0.5"
@@ -44,8 +47,9 @@
         android:layout_marginStart="30dp"
         android:autofillHints=""
         android:ems="10"
+        android:hint="@string/carid_hint"
         android:inputType="textPersonName"
-        android:text="@string/block1_edit"
+        android:visibility="invisible"
         app:layout_constraintBottom_toTopOf="@+id/block2_edit"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/b1_button" />
@@ -56,8 +60,9 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="30dp"
         android:ems="10"
+        android:hint="@string/brand_hint"
         android:inputType="textPersonName"
-        android:text="@string/brand_edit"
+        android:visibility="invisible"
         app:layout_constraintBottom_toTopOf="@+id/block3_edit"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/block1_edit" />
@@ -68,8 +73,9 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="30dp"
         android:ems="10"
+        android:hint="@string/name_hint"
         android:inputType="textPersonName"
-        android:text="@string/name_edit"
+        android:visibility="invisible"
         app:layout_constraintBottom_toTopOf="@+id/confirm_button"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/block2_edit" />
@@ -78,22 +84,37 @@
         android:id="@+id/confirm_button"
         android:layout_width="@dimen/select_button"
         android:layout_height="wrap_content"
-        android:layout_marginTop="300dp"
-        android:layout_marginBottom="180dp"
+        android:background="@color/confirm"
         android:text="@string/confirm_button"
+        android:visibility="invisible"
+        app:layout_constraintBaseline_toBaselineOf="@+id/delete_button"
+        app:layout_constraintEnd_toStartOf="@+id/delete_button"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/delete_button"
+        android:layout_width="@dimen/select_button"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="200dp"
+        android:background="@color/delete"
+        android:text="@string/delete_button"
+        android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/cancel_button"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/b2_button" />
+        app:layout_constraintStart_toEndOf="@+id/confirm_button"
+        app:layout_constraintTop_toBottomOf="@+id/block3_edit" />
 
     <Button
         android:id="@+id/cancel_button"
         android:layout_width="@dimen/select_button"
         android:layout_height="wrap_content"
+        android:background="@color/cancel"
         android:text="@string/cancel_button"
-        app:layout_constraintBaseline_toBaselineOf="@+id/confirm_button"
+        android:visibility="invisible"
+        app:layout_constraintBaseline_toBaselineOf="@+id/delete_button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/confirm_button" />
+        app:layout_constraintStart_toEndOf="@+id/delete_button" />
 </androidx.constraintlayout.widget.ConstraintLayout>

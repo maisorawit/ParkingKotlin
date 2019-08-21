@@ -3,9 +3,10 @@
     <string name="free1_button">Free</string>
     <string name="free2_button">Free</string>
     <string name="free3_button">Free</string>
-    <string name="block1_edit">Car Id :</string>
-    <string name="brand_edit">Brand :</string>
-    <string name="name_edit">Name :</string>
     <string name="confirm_button">Confirm</string>
+    <string name="delete_button">Delete</string>
     <string name="cancel_button">Cancel</string>
+    <string name="carid_hint">Car Id :</string>
+    <string name="brand_hint">Brand :</string>
+    <string name="name_hint">Name :</string>
 </resources>
