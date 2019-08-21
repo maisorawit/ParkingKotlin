@@ -1,5 +1,6 @@
 package buu.informatics.s59160135.parking
 
+import android.annotation.SuppressLint
 import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -8,20 +9,19 @@ import android.view.inputmethod.InputMethodManager
 import android.widget.Button
 import android.widget.EditText
 import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.android.synthetic.main.activity_main.view.*
 
 
-var a1 =""
-var a2 =""
-var a3 =""
+var id1 =""
+var brand1 =""
+var name1 =""
 
-var s1 =""
-var s2 =""
-var s3 =""
+var id2 =""
+var brand2 =""
+var name2 =""
 
-var d1 =""
-var d2 =""
-var d3 =""
+var id3 =""
+var brand3 =""
+var name3 =""
 
 var i = 0
 
@@ -29,10 +29,10 @@ class MainActivity : AppCompatActivity() {
 
 
 
+    @SuppressLint("ResourceAsColor")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
 
         findViewById<Button>(R.id.b1_button).setOnClickListener{
             i = 1
@@ -64,13 +64,14 @@ class MainActivity : AppCompatActivity() {
         val b1 = findViewById<EditText>(R.id.block1_edit)
         val b2 = findViewById<EditText>(R.id.block2_edit)
         val b3 = findViewById<EditText>(R.id.block3_edit)
+
         val confirm = findViewById<Button>(R.id.confirm_button)
         val delete = findViewById<Button>(R.id.delete_button)
         val cancel = findViewById<Button>(R.id.cancel_button)
 
-        b1.setText(a1)
-        b2.setText(a2)
-        b3.setText(a3)
+        b1.setText(id1)
+        b2.setText(brand1)
+        b3.setText(name1)
 
         b1.visibility = View.VISIBLE
         b2.visibility = View.VISIBLE
@@ -85,13 +86,14 @@ class MainActivity : AppCompatActivity() {
         val b1 = findViewById<EditText>(R.id.block1_edit)
         val b2 = findViewById<EditText>(R.id.block2_edit)
         val b3 = findViewById<EditText>(R.id.block3_edit)
+
         val confirm = findViewById<Button>(R.id.confirm_button)
         val delete = findViewById<Button>(R.id.delete_button)
         val cancel = findViewById<Button>(R.id.cancel_button)
 
-        b1.setText(s1)
-        b2.setText(s2)
-        b3.setText(s3)
+        b1.setText(id2)
+        b2.setText(brand2)
+        b3.setText(name2)
 
         b1.visibility = View.VISIBLE
         b2.visibility = View.VISIBLE
@@ -106,18 +108,18 @@ class MainActivity : AppCompatActivity() {
         val b1 = findViewById<EditText>(R.id.block1_edit)
         val b2 = findViewById<EditText>(R.id.block2_edit)
         val b3 = findViewById<EditText>(R.id.block3_edit)
+
         val confirm = findViewById<Button>(R.id.confirm_button)
         val delete = findViewById<Button>(R.id.delete_button)
         val cancel = findViewById<Button>(R.id.cancel_button)
 
-        b1.setText(d1)
-        b2.setText(d2)
-        b3.setText(d3)
+        b1.setText(id3)
+        b2.setText(brand3)
+        b3.setText(name3)
 
         b1.visibility = View.VISIBLE
         b2.visibility = View.VISIBLE
         b3.visibility = View.VISIBLE
-
 
         confirm.visibility = View.VISIBLE
         delete.visibility = View.VISIBLE
@@ -125,56 +127,43 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun confirm(view: View){
+        val id = findViewById<EditText>(R.id.block1_edit)
+        val brand = findViewById<EditText>(R.id.block2_edit)
+        val name = findViewById<EditText>(R.id.block3_edit)
 
         if(i == 1){
-            val editText1 = findViewById<EditText>(R.id.block1_edit)
-            val editText2 = findViewById<EditText>(R.id.block2_edit)
-            val editText3 = findViewById<EditText>(R.id.block3_edit)
+            id1 = id.text.toString()
+            brand1 = brand.text.toString()
+            name1 = name.text.toString()
 
-            a1 = editText1.text.toString()
-            a2 = editText2.text.toString()
-            a3 = editText3.text.toString()
-
-            val inputMethodManager = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
-            inputMethodManager.hideSoftInputFromWindow(view.windowToken, 0)
-
-            if(a1.isEmpty()){
+            if(id1.isEmpty()){
                 b1_button.text = "Free"
             }else {
-                b1_button.text = a1
+                b1_button.text = id1
             }
         }
         if(i == 2){
-            val editText1 = findViewById<EditText>(R.id.block1_edit)
-            val editText2 = findViewById<EditText>(R.id.block2_edit)
-            val editText3 = findViewById<EditText>(R.id.block3_edit)
+            id2 = id.text.toString()
+            brand2 = brand.text.toString()
+            name2 = name.text.toString()
 
-            s1 = editText1.text.toString()
-            s2 = editText2.text.toString()
-            s3 = editText3.text.toString()
-
-            if(s1.isEmpty()){
+            if(id2.isEmpty()){
                 b2_button.text = "Free"
             }else {
-                b2_button.text = s1
+                b2_button.text = id2
             }
         }
         if(i == 3){
-            val editText1 = findViewById<EditText>(R.id.block1_edit)
-            val editText2 = findViewById<EditText>(R.id.block2_edit)
-            val editText3 = findViewById<EditText>(R.id.block3_edit)
+            id3 = id.text.toString()
+            brand3 = brand.text.toString()
+            name3 = name.text.toString()
 
-            d1 = editText1.text.toString()
-            d2 = editText2.text.toString()
-            d3 = editText3.text.toString()
-
-            if(d1.isEmpty()){
+            if(id3.isEmpty()){
                 b3_button.text = "Free"
             }else {
-                b3_button.text = d1
+                b3_button.text = id3
             }
         }
-
         val inputMethodManager = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
         inputMethodManager.hideSoftInputFromWindow(view.windowToken, 0)
     }
@@ -183,12 +172,12 @@ class MainActivity : AppCompatActivity() {
         val editText1 = findViewById<EditText>(R.id.block1_edit)
         val editText2 = findViewById<EditText>(R.id.block2_edit)
         val editText3 = findViewById<EditText>(R.id.block3_edit)
-
         editText1.text.clear()
         editText2.text.clear()
         editText3.text.clear()
     }
 
+    @SuppressLint("ResourceAsColor")
     private fun cancel(view : View){
         findViewById<EditText>(R.id.block1_edit).visibility = View.GONE
         findViewById<EditText>(R.id.block2_edit).visibility = View.GONE

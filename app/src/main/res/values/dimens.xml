@@ -2,5 +2,6 @@
 <resources>
     <dimen name="width_button">100dp</dimen>
     <dimen name="height_button">100dp</dimen>
-    <dimen name="select_button">110dp</dimen>
+    <dimen name="select_button">160dp</dimen>
+    <dimen name="cancel_button">200dp</dimen>
 </resources>
